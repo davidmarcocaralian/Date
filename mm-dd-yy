@@ -1,0 +1,91 @@
+#include <iostream>
+#include <string>
+#include <conio.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+
+	int month, day, year;
+	int yearYear;
+	string monthName;
+	bool leapYear;
+
+	cout << "Enter Month: "; cin >> month;
+	cout << "Enter Day: "; cin >> day;
+	cout << "Enter Year: "; cin >> year;
+	cout << endl;
+
+	switch (month)
+	{
+	case 1:
+		monthName = "January";
+		break;
+	case 2:
+		monthName = "February";
+		break;
+	case 3:
+		monthName = "March";
+		break;
+	case 4:
+		monthName = "April";
+		break;
+	case 5:
+		monthName = "May";
+		break;
+	case 6:
+		monthName = "June";
+		break;
+	case 7:
+		monthName = "July";
+		break;
+	case 8:
+		monthName = "August";
+		break;
+	case 9:
+		monthName = "September";
+		break;
+	case 10:
+		monthName = "October";
+		break;
+	case 11:
+		monthName = "November";
+		break;
+	case 12:
+		monthName = "December";
+		break;
+	}
+
+	yearYear = year % 4;
+	if (yearYear == 0)
+	{
+		leapYear = true;
+	}
+	else
+	{
+		leapYear = false;
+	}
+
+	
+	if (month == 1 && day <= 31 || month == 3 && day <= 31 || month == 5 && day <= 31 || month == 7 && day <= 31 || month == 8 && day <= 31 || month == 10 && day <= 31 || month == 12 && day <= 31)
+	{
+		cout << monthName << " " << day << ", " << year;
+	}
+	else if (month == 4 && day < 31 || month == 6 && day < 31 || month == 9 && day < 31 || month == 11 && day < 31)
+	{
+		cout << monthName << " " << day << ", " << year;
+	}
+	else if (month == 2 && day <= 29 && leapYear == true)
+	{
+		cout << monthName << " " << day << ", " << year;
+	}
+	else
+	{
+		cout << "Invalid Date";
+	}
+
+	_getch();
+	return 0;
+}
